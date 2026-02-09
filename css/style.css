@@ -1,146 +1,255 @@
-body {
-  margin: 0px
-  }
+/* EDIT: Set a global reset for more predictable spacing */
+* {
+  box-sizing: border-box;
+}
 
-/****************   Nav Section **********************/
+body {
+  margin: 0px;
+  /* EDIT: Improved font stack for a cleaner, more modern look */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+/**************** Nav Section **********************/
 nav {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font: 1em Verdana;
+  /* EDIT: Increased padding and added a subtle bottom border instead of dark bg */
   display: flex;
-	background-color:midnightblue;
-  flex-direction: row;
+  background-color: #ffffff;
+  padding: 20px 10%;
   align-items: center;
   justify-content: space-between;
-  color: darkcyan;
-  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
 }
 
-/***********************  Footer Section   **************************/
+nav p {
+  margin: 0;
+  color: midnightblue;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+nav a {
+  /* EDIT: Styled as a clean button */
+  color: midnightblue;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1.5px solid midnightblue;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: midnightblue;
+  color: white;
+}
+
+/*********************** Footer Section **************************/
 footer {
   display: flex;
-	background-color: beige;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font: 1em Verdana;
+  background-color: #f1f1f1;
+  padding: 40px;
   justify-content: center;
-  padding: 20px;
+  border-top: 1px solid #ddd;
+  margin-top: 60px;
 }
 
-/*********** Splash Page ************************/
+footer a {
+  color: midnightblue;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+/*********** Splash Page (Header) ************************/
 header {
+  /* EDIT: Changed to a light, clean header with a gradient accent */
   background-color: midnightblue;
+  background: linear-gradient(135deg, #191970 0%, #000033 100%);
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
+  padding: 80px 20px;
 }
 
 header h1 {
   font-family: "Merriweather", serif;
-  color:darkcyan
-}
-
-
-.merriweather-header {
-  font-family: "Merriweather", serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-size: 2.5rem;
+  margin: 0 0 20px 0;
+  color: white; /* EDIT: Fixed contrast */
 }
 
 header img {
-  border-radius: 100px;
-  border: 3px solid white;
+  /* EDIT: Added a soft glow/shadow to the headshot */
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
 
+header img:hover {
+  transform: scale(1.05);
+}
+
+/* EDIT: Styled the contact info and tagline for better hierarchy */
 .address {
   display: flex;
   justify-content: center;
-  margin: 10px;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .tagline {
   display: flex;
   justify-content: center;
-  margin: 10px;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 40px;
 }
 
 /************* Sections ********************/
-hr {
-
+/* EDIT: Added a central container to sections for a professional "resume" width */
+section {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 section h3 {
   font-family: "Merriweather", serif;
-  color:darkcyan
+  color: midnightblue;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-top: 50px;
 }
 
+/* EDIT: Improved alignment for the definition list (Education/Experience) */
 section dl {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  margin-bottom: 25px;
 }
+
+dt { font-weight: 700; color: #222; }
+dd { margin: 0; text-align: right; color: #777; font-size: 0.9rem; }
 
 section ul {
-  display: grid;
-  grid-template-rows: 1fr;
+  padding-left: 20px;
 }
 
-section a {
-  color: black;
-  text-decoration: none;
+section li {
+  margin-bottom: 8px;
 }
 
-section a:hover {
-  text-decoration: dashed;
-}
-
-/**************   Projects   *****************/
+/************** Projects *****************/
 .three-col {
-	display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
-  justify-content: space-evenly;
-}
-
-.card img {
-  width: 200px;
+  display: grid;
+  /* EDIT: Switched to auto-fit so it's naturally responsive */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .card {
   display: flex;
-  margin: 0 50px;
   flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  box-shadow: 1px 1px 15px
+  background: white;
+  padding: 0; /* EDIT: Changed to 0 so image hits edges if desired */
+  border-radius: 12px;
+  /* EDIT: Applied a much softer, modern "floating" shadow */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid #efefef;
+  overflow: hidden; /* Clips the image corners to match card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/**************   Responsiveness   *****************/
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* EDIT: Prevents distortion of images */
+}
+
+.card h3 {
+  padding: 15px 15px 0 15px;
+  border: none;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.card ul {
+  padding: 15px 25px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/************** Responsiveness *****************/
 @media (max-width: 680px) {
     nav {
-      display: flex;
       flex-direction: column;
+      text-align: center;
+      gap: 15px;
     }
-
-    .three-col {
-      display: grid;
+    
+    section dl {
       grid-template-columns: 1fr;
-      justify-content: space-evenly;
     }
+    
+    dd { text-align: left; }
 }
 
-/**************   Contact Page   *****************/
+/************** Contact Page *****************/
 .one-col {
-  display: grid;
-  grid-template-columns: 1fr;
+  /* EDIT: Constrained the form width and added a background card effect */
+  max-width: 550px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-input {
-  margin: 20px 100px
-
+/* EDIT: Modernized input fields */
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+  font-family: inherit;
+  transition: border-color 0.3s;
 }
 
-textarea {
-   margin: 20px 100px
+input:focus, textarea:focus {
+  outline: none;
+  border-color: midnightblue;
+  background-color: white;
+}
+
+input[type="submit"] {
+  background-color: midnightblue;
+  color: white;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #000033;
 }
